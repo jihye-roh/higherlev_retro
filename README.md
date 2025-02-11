@@ -1,6 +1,5 @@
 # Higher-level Strategies for Computer-Aided Retrosynthesis #
 
-<<<<<<< HEAD
 This repo contains the code for [Higher-level Strategies for Computer-Aided Retrosynthesis](https://chemrxiv.org/engage/chemrxiv/article-details/67a11f0ffa469535b9f4648c). 
 
 <img align="center" src="Higher-level_retrosynthesis.png" width="900px" />
