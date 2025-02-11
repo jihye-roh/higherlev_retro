@@ -1,0 +1,2 @@
+C=CC(=O)N1CC[C@H](n2nc(C#Cc3cc(OC)cc(OC)c3)c3c(N)ncnc32)C1
+CC(=O)OCC1=CS[C@@H]2C(NC(=O)Cc3cccs3)C(=O)N2C1C(=O)O

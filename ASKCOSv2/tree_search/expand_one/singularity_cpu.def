@@ -1,0 +1,20 @@
+Bootstrap: docker
+From: continuumio/miniconda3:23.3.1-0
+
+%environment
+    export CUDA_VISIBLE_DEVICES=10
+
+%post
+    apt update && apt -y install git gcc g++ make
+    conda install -y mamba=1.4.7 -c conda-forge
+    mamba install -y -q python=3.8.17 pip=23.2.1 rdkit=2022.09.5 -c conda-forge
+    mamba install -y -q rdchiral_cpp=1.1.2 -c conda-forge
+    pip install \
+        fastapi==0.95.1 \
+        protobuf==3.19.0 \
+        pydantic==1.10.12 \
+        pytest==7.4.1 \
+        requests==2.31.0 \
+        scipy==1.7.3 \
+        tqdm==4.66.1 \
+        uvicorn==0.21.1

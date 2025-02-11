@@ -1,0 +1,12 @@
+checkpoints/*
+checkpoints_tmp/*
+data/*
+logs/*
+results/*
+tmp/*
+*.sif
+mars/*
+mars_partial/*
+hyperopt/*
+wandb/*
+*.ipynb

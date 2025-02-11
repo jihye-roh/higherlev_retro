@@ -1,0 +1,5 @@
+*.sif
+logs/
+results/*
+logs/*
+*.ipynb

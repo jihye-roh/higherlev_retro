@@ -1,0 +1,7 @@
+checkpoints/*
+checkpoints_tmp/*
+data/*
+logs/*
+results/*
+tmp/*
+*.sif

@@ -1,0 +1,31 @@
+FROM mambaorg/micromamba:1.4.7
+
+USER root
+# Keep the base environment activated
+ARG MAMBA_DOCKERFILE_ACTIVATE=1
+RUN apt update && apt -y install git gcc g++ make
+
+# Use micromamba to resolve conda-forge, much faster than conda
+RUN micromamba install -y python=3.8.17 pip=23.2.1 rdkit=2022.09.5 -c conda-forge
+ADD rdchiral rdchiral
+RUN pip install -e rdchiral
+# RUN micromamba install -y rdchiral_cpp=1.1.2 -c conda-forge
+RUN pip install \
+    fastapi==0.95.1 \
+    pillow==10.1.0 \
+    protobuf==3.19.0 \
+    pydantic==1.10.12 \
+    pytest==7.4.1 \
+    requests==2.31.0 \
+    scipy==1.7.3 \
+    tqdm==4.66.1 \
+    uvicorn==0.21.1
+
+COPY . /app/expand_one
+WORKDIR /app/expand_one
+
+EXPOSE 9301
+
+ENV CUDA_VISIBLE_DEVICES 10
+
+CMD ["python", "expand_one_server.py"]

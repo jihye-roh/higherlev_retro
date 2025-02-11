@@ -1,0 +1,2 @@
+# rdchiral (mod)
+This is a modified version of rdchiral that maintains isotope labels when extracting templates. Please see [the rdchiral rep](https://github.com/connorcoley/rdchiral) for more details.

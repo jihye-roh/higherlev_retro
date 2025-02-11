@@ -1,0 +1,16 @@
+Bootstrap: docker
+From: continuumio/miniconda3:23.3.1-0
+
+%post
+    apt update && apt -y install gcc g++ make
+    conda install -y mamba=1.4.7 -c conda-forge
+    mamba install -y -q python=3.8 pip=23.2.1 rdkit=2020.09.5 openjdk=11 -c conda-forge
+    mamba install -y -q pytorch==1.12.1 cudatoolkit=11.3 -c pytorch -c conda-forge
+    mamba install -y -q rdchiral_cpp=1.1.2 -c conda-forge
+    pip install \
+        pandas==1.5.3 \
+        pebble==5.0.3 \
+        scipy==1.7.3 \
+        tqdm==4.66.1 \
+        torch-model-archiver==0.3.1 \
+        torchserve==0.3.1
