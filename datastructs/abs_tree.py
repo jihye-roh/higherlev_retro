@@ -225,6 +225,12 @@ class AbsTree(SynTree):
         # print("Removing cyclic edges for node", node, abs_smiles)
         # Get the shortest path from the previous node to the current node
         prev_node = self.abs_smiles_to_node[subtree_root][abs_smiles]
+
+        if not nx.has_path(self.abs_tree, prev_node, node):
+            if not prev_node[0]== node[0]:
+                logging.info(f"Skipping cyclic edge removal for node {node} and prev_node {prev_node} in {self.route_id}")
+            return
+        
         path = nx.shortest_path(
             self.abs_tree, 
             prev_node, 

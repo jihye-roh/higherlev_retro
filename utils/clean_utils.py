@@ -41,7 +41,7 @@ def reassign_atom_maps(smiles_in):
         curr_map += 1
     
     for a in reacts_mol.GetAtoms():
-        if a.GetAtomMapNum() in maps_dict:
+        if a.GetAtomMapNum() and a.GetAtomMapNum() in maps_dict:
             a.SetAtomMapNum(maps_dict[a.GetAtomMapNum()])
         else:
             a.SetAtomMapNum(curr_map)
