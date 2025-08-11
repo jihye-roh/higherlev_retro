@@ -35,13 +35,26 @@ preprocess_smarts = [
 
     # Single ring carbon atom leaving if connected to more than 3 core atoms or a carbon core atom
     '[200#6;R;$([#6](@[100#6])@[100*]),$([#6](@[100*])(@[100*])~[100*]);!$([#6]~[200*,201*,202*]):1]>>[10C:1]',
+    
+    # NO2 to N*, NO to N*
+    '[100N+X3:1](=[201O&D1])-[201O-D1]>>[1N+0:1]',
+    '[100N+X3:1](=[201O&D1])-[O-H0:2]>>[1N+0:1]-[1O+0H1:2]',
+    '[100#7+:1]-[201O-D1]>>[1#7+0:1]',
 
     # Methyl ketone demethylation
     '[100CH0;$([C]=[O;0*,10*,100*]):1]-[200CH3:2]>>[100C:1]-[0CH3:2]',
 
-    # 1,2-diol to aldehyde - total 160 reactions (not worth it?)
+    # 1,2-diol to aldehyde
     '[OH:1][100CH:2][200CH2:3][201OH:4]>>[OH:1][100CH:2][0CH2:3][0OH:4]',
 
+    # C-CN, C-CX3>>C+
+    '[100#6:1]-[200C;' 
+        +'$([C]#[201N]),'
+        +'$([C]([F,Cl,Br,I;201*])([F,Cl,Br,I;201*])([F,Cl,Br,I;201*])):2]'
+        +'>>[100#6:1]-[201C:2]',  
+    
+    # C-C(=O)>>C-, only if not connected to a more electronegative leaving atom
+    '[100#6;!$([C]~[201*]):1][200C:2]=[201O:3]>>[100#6:1][202C:2]=[201O:3]',
 
 ]
 
@@ -80,6 +93,3 @@ abstraction_smarts = [
 
     
 ]
-
-
-
