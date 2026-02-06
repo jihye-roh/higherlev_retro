@@ -20,6 +20,14 @@ The data for this project are available at [this link](https://doi.org/10.6084/m
 
 - `higher-level_consol_model_and_data.zip`: Contains the files necessary to deploy ASKCOS and run synthesis planning with just the higher-level single-step model (with template consolidation).
 
+### Note on Figshare access
+
+Some users may intermittently encounter HTTP 403 (Forbidden) errors when accessing data hosted on Figshare. This behavior originates from Figshare’s infrastructure and is not specific to this project.
+
+If you encounter access issues, trying again later or using a different browser may help. For related updates, see:
+[http://status.figshare.com/](http://status.figshare.com/)
+
+
 -----
 
 ## Generating higher-level dataset from a list of reactions
