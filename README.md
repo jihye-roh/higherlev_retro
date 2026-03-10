@@ -1,6 +1,6 @@
 # Higher-Level Strategies for Computer-Aided Retrosynthesis #
 
-This repo contains the code for [Higher-Level Strategies for Computer-Aided Retrosynthesis]([https://doi.org/10.26434/chemrxiv-2025-21zvt-v2](https://pubs.acs.org/doi/10.1021/acscentsci.5c02014)). 
+This repo contains the code for [Higher-Level Strategies for Computer-Aided Retrosynthesis](https://pubs.acs.org/doi/10.1021/acscentsci.5c02014). 
 
 <img align="center" src="Higher-level_retrosynthesis.png" width="900px" />
 
